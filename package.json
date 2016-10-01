@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ahmed-Badawy <me@ahmed-badawy.com> (http://ahmed-badawy.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "get-video-dimensions": "1.0.0",
+    "get-video-duration": "0.0.1",
+    "gm": "1.23.0",
+    "mongodb": "2.2.10",
+    "mysql": "2.11.1"
+  }
 }
