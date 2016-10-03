@@ -9,6 +9,7 @@
   "author": "Ahmed-Badawy <me@ahmed-badawy.com> (http://ahmed-badawy.com/)",
   "license": "ISC",
   "devDependencies": {
+    "jsdom": "9.6.0",
     "moment": "2.15.1",
     "mongodb": "2.2.10",
     "mysql": "2.11.1"
