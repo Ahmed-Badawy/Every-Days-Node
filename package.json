@@ -9,9 +9,7 @@
   "author": "Ahmed-Badawy <me@ahmed-badawy.com> (http://ahmed-badawy.com/)",
   "license": "ISC",
   "devDependencies": {
-    "get-video-dimensions": "1.0.0",
-    "get-video-duration": "0.0.1",
-    "gm": "1.23.0",
+    "moment": "2.15.1",
     "mongodb": "2.2.10",
     "mysql": "2.11.1"
   }
