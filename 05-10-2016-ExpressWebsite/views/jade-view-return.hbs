@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body class='container'>
+
+	<h1>This Is HBS Templating Engine: </h1>
+	<ul style='font-size:200%'>
+		{{#each users as |user|}}
+		<li><a href="/users/{{user.id}}">{{user.name}}</a></li>
+		{{/each}}
+	</ul>
+
+<hr>
+<h3>Now we will query the /images static file provider:-</h3>
+	<image src='images/1.png' width="100">
+	<image src='images/2.jpg' width="100">
+	<image src='images/3.jpg' width="100">
+<hr>
+	<image src='private/me.jpg' width="100">
+<hr>
+
+
+	<h3><a href="html/normal-file.html">Serve normal HTML file</a></h3>
+
+
+<hr>
+<form method='post' action='/users'>
+	<legend>This is a form (Generate Put Request)</legend>
+	<!-- <input type='hidden' name='_method' value='put'> -->
+
+	username <input class='form-control' name='name'>
+	Email <input class='form-control' name='email'>
+	URL <input class='form-control' name='url'>
+	<button type='submit' class='btn btn-primary btn-lg btn-block'>Submit</button>
+</form>
+<hr>
+
+
+
+</body>
+</html>

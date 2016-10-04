@@ -1,0 +1,39 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "consolidate": "^0.14.0",
+    "express": "^4.13.4",
+    "handlebars": "^4.0.5",
+    "jsdom": "^8.5.0",
+    "lodash": "^4.5.1",
+    "mocha": "^2.4.5",
+    "should": "^8.3.1",
+    "supertest": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed-Badawy/Refining-My-Express.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ahmed-Badawy/Refining-My-Express.js/issues"
+  },
+  "homepage": "https://github.com/Ahmed-Badawy/Refining-My-Express.js#readme",
+  "description": ""
+}

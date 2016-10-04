@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body class='container'>
+
+
+<h1>Hello, {{user.name}} <small>({{user.id}})</small></h1>
+
+<form onSubmit='add_user();return false;'>
+	<!-- <input type='hidden' name='_method' value='PUT' /> -->
+	<table class='table'>
+		<tr>
+			<td>Name</td>
+			<td><input class='form-control' id='name' name='name' value='{{user.name}}' /></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input class='form-control' id='email' name='email' value='{{user.email}}'/></td>
+		</tr>
+		<tr>
+			<td>Url</td>
+			<td><input class='form-control' id='url' name='url' value='{{user.url}}'/></td>
+		</tr>				
+	</table>
+	<button class='btn btn-primary' type='submit'>Update</button>
+	<button class='btn btn-danger' onClick="delete_user()" type='reset'>Delete</button>
+</form>
+
+
+
+<script type="text/javascript">
+
+	function add_user(){
+		$.ajax('/users/{{user.id}}',{
+			method:'PUT',
+			data:{
+				id: {{user.id}},
+				name: $('#name').val(),
+				email: $('#email').val(),
+				url: $('#url').val()
+			},
+			complete:function(){
+				alert("Edited");
+				location.reload()
+			}
+		})
+	}
+
+	function delete_user(){
+		$.ajax('/users/{{user.id}}',{
+			method:'DELETE',
+			data:{
+				id: {{user.id}}
+			},
+			complete:function(){
+				alert("Deleted");
+				location = '/template-view'
+			}
+		})
+	}	
+
+</script>
+
+
+</body>
+</html>
