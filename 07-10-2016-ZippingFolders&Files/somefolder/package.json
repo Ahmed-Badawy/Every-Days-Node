@@ -1,0 +1,33 @@
+{
+  "name": "RetreveNumbers",
+  "version": "1.1.0",
+  "description": "Give You a specific number in a string format",
+  "main": "src/index.js",
+  "scripts": {
+    "test2": "mocha ./tests/index.test.js -w",
+    "test": "mocha ./tests --recursive -w",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed-Badawy/Write-an-Open-Source-JavaScript-Library.git"
+  },
+  "author": "Ahmed-Badawy <me@ahmed-badawy.com> (http://ahmed-badawy.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmed-Badawy/Write-an-Open-Source-JavaScript-Library/issues"
+  },
+  "homepage": "https://github.com/Ahmed-Badawy/Write-an-Open-Source-JavaScript-Library#readme",
+  "dependencies": {
+    "unique-random-array": "1.0.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "commitizen": "2.8.6",
+    "cz-conventional-changelog": "1.2.0",
+    "mocha": "3.0.2"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+}
