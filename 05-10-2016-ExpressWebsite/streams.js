@@ -1,14 +1,13 @@
 var fs = require('fs');
 
 
-
 /********************************************
-    Copy Streams
+    Copy Streams (non blocking io)
 ********************************************/
-var input_stream = fs.createReadStream('./users.json')
-var writable = fs.createWriteStream('./users-copy.json')
+var input_stream = fs.createReadStream('./users.json');
+var writable_stream = fs.createWriteStream('./users-copy.json');
 // stream.pipe(process.stdout); //output stream on console.
-input_stream.pipe(writable); //write to the second file
+input_stream.pipe(writable_stream); //write to the second file
 //------------------------------------------
 
 
@@ -36,6 +35,6 @@ var server = net.createServer(function(connect){
 
 
 
-server.listen(3000,function(){
-	console.log("Server Started");
+server.listen(3333,function(){
+	console.log("Server Started at port 3333");
 })

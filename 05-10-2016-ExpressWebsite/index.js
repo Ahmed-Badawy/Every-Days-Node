@@ -16,9 +16,10 @@ exApp.engine('hbs',engines.handlebars);//force handlebars as the default templat
 /*********************************************************************
 Define Your Static Files Provider
 **********************************************************************/
-exApp.use('/images',express.static('public/images/pics'));//means: any request to /images return with the public/images directory
+exApp.use('/images',express.static('public/images/pics'));//means: any request to /images return with the public/images/pics directory
 exApp.use(express.static('public'));// this is a default request directory
 /**********************************************************************/
+
 
 
 /*********************************************************************
@@ -71,7 +72,6 @@ var users = get_users();
 
 
 
-
 /*********************************************************************
 Process Post & Put (FORM) Requests
 **********************************************************************/
@@ -111,15 +111,13 @@ function do_something(params){
 }
 
 
-
-
 //this is how to create a route
 exApp.get('/',function(request,result,next){
 	// next(); this will end the current route & go on to the next route that matches the request
 	// result.redirect('/err'); this will redirect you to a defined route
 	// result.status(404).send("No Page Found Here"); //return the message with a 404 status
 
-	result.send("Hello World fuck you man1222asdf!");
+	result.send("Hello World, this is the main route!");
 })
 exApp.get('/route-name',function(request,result){
 	result.send("this is the route result");
@@ -153,16 +151,48 @@ exApp.get('/users/:user_id',function(request,result,next){
 
 //regex is allowed in url. try any link start with big
 exApp.get(/big.*/,function(request,result,next){
-	console.log("this is Big Route console log");
-	next();
+	result.send( "ok, this is big Rotue" );
 })
 
-
-//download response
+//download response:    http://localhost:3000/download/1.img
 exApp.get('/download/*.img',function(request,result){
 	result.download('./download-files/me.jpg','private-img.jpg'); //return a download file
 	// result.send("image was downloaded");
 })
+
+//Adding Filters 
+function myFilter(req,res,next){
+	var allowed = false;
+	if(allowed) next(); //ok respond with this route
+	else next('route'); //means skip this route
+}
+exApp.get('/filtered_route', myFilter, function(request,result,next){
+	result.send("Good Bye!");
+})
+
+//status route (with 404 status)
+exApp.get('/status_route', function(request,result,next){
+	result.status(404).send("Status route");
+})
+
+//json route for apis & similar stuff
+exApp.get('/json_res', function(request,result,next){
+	result.json({"one":1,"two":2});
+})
+
+//use method means use it before going after any way
+exApp.use(function(request,res,next){
+	console.log("this is the use method, gets used any way");
+	next();
+})
+
+
+//All Route match all (get,post,put,delete)
+exApp.all('/all', function(request,result,next){
+	result.send("this is all response");
+})
+
+
 
 
 
@@ -212,11 +242,19 @@ myEmitter.on('event2',function(somedata){ console.log("event 2",somedata) })
 
 
 
-//404 route if non any found
-exApp.get(/.*/,function(request,result){
-	result.send("<h1>Sorry! This is 404 Page man</h1>");
+exApp.get('/server-err',function(){ this.nonExistingMethod() });//this will generate a server error.
+
+//to handle server errors you can use .use() with four params
+exApp.use(function(err,request,res,next){
+	console.error(err.stack);
+	res.status(500).send('<h1>500 Error, something is broken in the server!')
 })
 
+//to handle 404 route if non any found
+exApp.get(/.*/,function(request,result){
+	// result.send("<h1>Sorry! This is 404 Page man</h1>");
+	result.status(404).send("<h1>Sorry! This is 404 Page man</h1>");
+})
 
 
 

@@ -1,0 +1,25 @@
+<h1>Output Message:- </h1>
+<h2 style='background-color:red;color:white;padding:10px'>{{msg}}</h2>
+
+
+	<h3>{{type}}</h3>
+<form action='#' method='POST'>
+	username: <input name='username'/>   <br/>
+	password: <input type='password' name='password'/>   <br>
+<!-- 	Method: 
+	<select name='_method'>
+		<option value='DELETE'>delete</option>
+		<option value='PUT'>put</option>
+	</select> -->
+	<br/><br/>
+	<button type='submit'>Submit</button>
+</form>
+	
+
+<pre>
+	URL Params:    {{url_params}}
+<hr>
+	Get Params:    {{get_params}}
+<hr>
+	Post Params:     {{post_params}}
+</pre>
