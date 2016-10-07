@@ -26,10 +26,12 @@ exApp.use(express.static('public'));// this is a default request directory
 Remove X-Powered-By →Express from header
 **********************************************************************/
 exApp.use(function(req,res,next){
+  	res.removeHeader("X-Powered-By");
 	res.set('X-Powered-By','Ahmed Badawy');
 	next();
 })
 /**********************************************************************/
+
 
 
 
@@ -242,19 +244,32 @@ myEmitter.on('event2',function(somedata){ console.log("event 2",somedata) })
 
 
 
-exApp.get('/server-err',function(){ this.nonExistingMethod() });//this will generate a server error.
+exApp.get('/server-err',function(){ this.nonExistingMethod() });//this will generate a server error status 500.
 
-//to handle server errors you can use .use() with four params
-exApp.use(function(err,request,res,next){
-	console.error(err.stack);
-	res.status(500).send('<h1>500 Error, something is broken in the server!')
-})
+	function render_error(err,res){
+		var response_obj =  {
+	      	message: err.message,
+	      	error : false
+	    }
+	    if (exApp.get('env')=='development'){ response_obj.error = err } 
+		res.status(err.status).render('error',response_obj);	
+	}
 
-//to handle 404 route if non any found
-exApp.get(/.*/,function(request,result){
-	// result.send("<h1>Sorry! This is 404 Page man</h1>");
-	result.status(404).send("<h1>Sorry! This is 404 Page man</h1>");
-})
+	//to handle server errors you can use .use() with four params
+	exApp.use(function(err,req,res,next){
+		// res.status(500).send('<h1>500 Error, something is broken in the server!')
+		err.status = err.status || 500;
+		render_error(err,res);	
+	})
+
+	//to handle 404 route if non any found
+	exApp.get(/.*/,function(req,res){
+		// result.send("<h1>Sorry! This is 404 Page man</h1>");
+		// result.status(404).send("<h1>Sorry! This is 404 Page man</h1>");
+		var err = new Error('Not Found');
+		err.status = 404;
+		render_error(err,res);	
+	})
 
 
 
@@ -263,3 +278,5 @@ var server = exApp.listen(3000,function(){
 	//fire this on start
 	console.log("Server Running at http://localhost:"+server.address().port);
 });
+
+
