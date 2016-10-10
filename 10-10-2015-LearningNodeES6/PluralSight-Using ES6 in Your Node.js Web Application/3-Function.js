@@ -1,17 +1,18 @@
 
 console.log("----------------------------------Arrow Functions----------------------------------");
-//Arrow functions
-var fn1 = a=>a+10; //for one line of code don't need to use {}. it will imped the return
+var fn1 = a=>a+10; //if you only have one param you can ommit the ()... for one line of code don't need to use {}. it will imped the return.
 var fn2 = (a,b)=>{ //if you need two params you need the (a,b). if you put {}  you can't remove the return.
 	return a + b;
 }
-
+var fn3 = _=>33;  // if you have only one argument you can put _ instead
 console.log( fn1(3) );
 console.log( fn2(3,5) );
+console.log( fn3() );
+/**********************************************************************/
+
 
 
 console.log("----------------------------------Classes----------------------------------");
-//Classes
 class class1{
 	constructor(name){ this.name = name };
 	method1(){ return "this is the method1 from class1" }; //this is almost on a prototype
@@ -37,8 +38,8 @@ console.log( new class2("Ahmed").method1() );
 
 
 
+
 console.log("----------------------------------Generators----------------------------------");
-//Generators
 function* gen(input){
 
 //do stuff
@@ -58,6 +59,7 @@ console.log( it.next() );
 console.log( it.next('my Input Man') );
 console.log( it.next() );
 if( it.next().done ) console.log('Finished Every Thing');
+
 
 
 

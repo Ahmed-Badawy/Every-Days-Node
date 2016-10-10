@@ -1,3 +1,5 @@
 node_modules
 ---underDev
 *.mp4
+*.avi
+*.mkv
