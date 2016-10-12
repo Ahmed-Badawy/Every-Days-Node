@@ -1,0 +1,19 @@
+
+$ npm init						#init project
+$ npm install hapi --save		#install hapi
+$ npm install good good-console -D      # for logging Operations 
+
+$ npm install inert --save
+$ npm install vision --save
+$ npm install handlebars --save
+
+$ nodemon -w ./ index.js 		#run nodemon development server
+# or add "dev": "nodemon -w ./ index.js" to the package then use $ npm run dev
+
+
+
+
+
+
+
+
