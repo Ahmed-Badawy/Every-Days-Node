@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+	*{ box-sizing: border-box }
+	html{ background: #b8d9e9 }
+	body{ 
+		overflow: hidden;
+		padding: 0 15px;
+		margin: 0;
+	}
+	.container{
+		display: flex;
+		/*height: 100vh;*/
+		align-items: center;
+	}
+	#input_field{
+		flex: 1;
+		height: 36px;
+		border: 1px solid #ababab;
+		border-radius: 3px;
+		background:#fff;
+		font-size:20px;
+		padding:0 10px;
+	}
+	#status{
+		display: inline-block;
+		height: 36px;
+		width:36px;
+		border-radius: 50%;
+		margin-left: 15px;
+	}
+	.unknown{ background: gray }
+	.clean{ background: green }
+	.dirty{  background: red }
+	</style>
+</head>
+<body>
+
+
+<div class="container">
+
+	<input id='input_field' />
+	<div id='status' class='unknown'></div>
+	<br>
+</div>
+	<h3>Check if there is a git repo at this directory:-</h3>
+	<p style='clear:both'>Try ~/Downloads/gitit/</p>
+	<ul>
+		<li>if repo is a git repo & all commits are made it will be green </li>
+		<li>if repo is a repo & have un commited res it will apear red</li>
+		<li>if not a git repo will apear gray(don't know)</li>
+	</ul>
+
+
+<script type="text/javascript">require('./status.js')</script>
+
+</body>
+</html>
