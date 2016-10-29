@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Marked in the browser</title>
+  <script src="./marked.min.js"></script> 
+</head>
+<body>
+
+<h1>From Markdown to HTML:</h1>
+
+  <div id="main1"></div>
+  <script>
+
+    document.getElementById('main1').innerHTML =
+marked(`# Marked in browser
+endered by **marked**.
+### hello agina
+	hello world
+
+---
+`);
+
+  </script> 
+
+
+
+<h1>From HTML to Markdown:</h1>
+<pre id="main2"></pre>
+
+
+<script src="./to-markdown.js"></script> 
+<script>
+	document.getElementById('main2').innerHTML = toMarkdown(`
+<h1>Hello world!</h1>
+<ul>
+	<li>one</li>
+	<li>two</li>
+	<li>three</li>
+</ul>
+
+<a href='http://google.com'>link</a>
+
+		`);
+</script>
+
+
+
+</body>
+</html>

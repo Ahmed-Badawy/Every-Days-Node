@@ -1,0 +1,15 @@
+{
+  "name": "markdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "html-to-markdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmed-Badawy <me@ahmed-badawy.com> (http://ahmed-badawy.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "marked": "0.3.6",
+    "to-markdown": "3.0.3"
+  }
+}
