@@ -1,0 +1,47 @@
+
+body{
+/*this is documentation*/
+//testingit 
+  font: 100%;
+  background: linear-gradient(top,black,white);
+  animation: foo 1s;
+  margin:0;
+  color:yellow;
+  margin:15px;
+}
+
+h1{
+  color:red;
+  background-color:green;
+  small{
+    color:red;
+  }
+}
+
+hr{
+  color:white;
+  background:green;
+}
+
+:fullscreen a {
+  display: flex
+}
+
+a {
+  display: flex;
+}
+
+
+a {
+  transition: 1s;
+}
+
+b {
+  /* autoprefixer: off */
+  transition: 1s;
+}
+
+
+
+
+

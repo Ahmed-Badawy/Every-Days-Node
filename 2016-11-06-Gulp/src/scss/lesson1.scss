@@ -1,0 +1,176 @@
+
+
+//this is how we define scss variables:
+$font-stack: Helvetica, sans-serif;
+$primary-color: #eee;
+$background-color: #fff;
+$hs-color: #fff;
+
+body{
+  font : $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
+}
+
+#wrapper{
+  width:70%;
+  margin:0 auto;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #333;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color:$hs-color;
+  border-bottom: 1px solid $hs-color;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+
+
+//reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  font: 18px Helvetica, Arial, Sans-Serif;
+  background-color: #222;
+}
+.breadcrumb li {
+  float: left;
+  transition: all .3s linear;
+  &:hover{
+    padding-left:20px;
+    &>a:hover{
+      background-color: #333;
+      color:#ccc;
+    }
+  }
+}
+
+.breadcrumb li a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px 0 10px 65px;
+  background: brown;                   /* fallback color */
+  background: #FFF0F5;
+  position: relative;
+  display: block;
+  float: left;
+  transition: all .3s linear;
+}
+
+.breadcrumb li a:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid #FFF0F5;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 100%;
+  z-index: 2;
+  transition: all .3s linear;
+}
+
+.breadcrumb li a:hover:after {
+  border-left: 30px solid #333;
+}
+
+.breadcrumb li a:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 31px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1;
+}
+
+
+.breadcrumb li:first-child a {
+  padding-left: 10px;
+}
+.breadcrumb li:nth-child(2) a       { background:        hsla(34,85%,45%,1); }
+.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(34,85%,45%,1); }
+.breadcrumb li:nth-child(3) a       { background:        hsla(34,85%,55%,1); }
+.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(34,85%,55%,1); }
+.breadcrumb li:nth-child(4) a       { background:        hsla(34,85%,65%,1); }
+.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(34,85%,65%,1); }
+.breadcrumb li:nth-child(5) a       { background:        hsla(34,85%,75%,1); }
+.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(34,85%,75%,1); }
+.breadcrumb li:last-child a {
+  background: transparent !important;
+  color: black;
+  pointer-events: none;
+  cursor: default;
+}
+.breadcrumb li:nth-child(5) a:after { border-left: 0; }
+
+
+
+
+

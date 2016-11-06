@@ -1,0 +1,1 @@
+function fuck(){console.log("fuck")}var fuck="fuck",damn="damn",fuck2="damn",damn3="dam3";

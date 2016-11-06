@@ -1,0 +1,7 @@
+body{
+	color:black;
+	background: green;
+	background: linear-gradient(top,black,white);
+	animation: foo 1s; 
+	margin:0;
+}

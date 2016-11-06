@@ -1,0 +1,14 @@
+- make sure you have node & npm installed & ok
+	$ node -v
+	$ npm -v
+
+- init a package & install gulp glopally & lockally
+	$ npm init
+	$ npm install -g gulp 			# install gulp on your glopal machine
+	$ npm install gulp --save-dev 	# install gulp on this project
+
+- create the Gulpfile.js then run it
+	$ gulp 		# run gulpfile.js
+
+- to run spacific task 
+	$ gulp task1
