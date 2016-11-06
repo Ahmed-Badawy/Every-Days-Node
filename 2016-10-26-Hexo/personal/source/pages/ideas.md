@@ -3,8 +3,46 @@ title: ideas
 date: 2016-10-27 18:25:22
 ---
 
-## Json Share Server
-for your applications. json files share server. 
+## JsonP provider -- done
+copy a json api every 15 minutes to a localfile using corn job.
+provide it to users using jsonp technology.
+
+---
+
+---
+
+# Waiting 
+
+## Electron Movies Viewer
+- show you a list of the movies & image from them.
+- play the Movies by a click of button.
+- can refer you to a (translation links for the movie) 
+- can refer to (google links/images/videos) form the movie
+- can refer to an (imdb search) 
+
+---
+
+## SnowMan Game
+very light little game 
+
+---
+
+## Units Converter
+
+---
+
+## Currency Converter
+
+---
+
+## Websites updated listener
+listen to websites & if it got changed or part of them got changed you will get alerted.
+very useful to detect websites updates or failures & this kinda of stuff.
+
+---
+
+## Json Sharing Server
+ json files share server. for your applications.
 that create/detete/replace/download/read json files. with paginations & cool filtering. 
 one page applications that do every thing using angular 1 & laravel just like dawaey.
 
