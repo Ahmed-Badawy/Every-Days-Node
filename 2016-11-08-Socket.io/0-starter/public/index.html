@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+  	<button onClick='send()'>Send Event to the backend</button>
+  	<h1 id='main'></h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+	    var socket = io('http://localhost:8000');
+	    
+	    socket.on('message-from-server', function(evt) {
+	        document.getElementById('main').innerHTML = `<h1>${evt.greeting} - ${evt.counter}</h1>`;
+	    });
+
+    	let counter = 0;
+
+        function send(){
+	        socket.emit('message-from-client', {
+	        		greeting: 'Hello from Client',
+	        		counter: counter++
+	      	});        	
+        }
+    </script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+    <input name='person' id='person' />
+    <input name='txt' id='txt' />
+  	<button onClick='send()'>Send Event to the backend</button>
+    <ul id='main'>
+      <li>Init</li>
+    </ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+	    var socket = io('http://localhost:8000');
+	    
+	    socket.on('message-from-server', function(evt) {
+	        document.getElementById('main').innerHTML += `<li>${evt.person}: ${evt.msg}</li>`;
+	    });
+
+    	let counter = 0;
+
+        function send(){
+	        socket.emit('message-from-client', {
+              person: document.getElementById('person').value,
+	        		msg : document.getElementById('txt').value
+	      	});        	
+        }
+    </script>
+
+
+
+  </body>
+</html>
