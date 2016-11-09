@@ -1,0 +1,52 @@
+
+$ npm init
+$ bower login : Authenticate with GitHub and store credentials.
+
+$ npm i -g bower
+
+
+$ bower install jquery bootstrap angular -S     : installing packages , -S means save them inside bower.json file
+	// to install specific version you can use this command:
+		$ bower install jquery#1.9.1 -S
+	// also you can install github repos
+		$ bower install https://github.com/user/package.git -S
+	// Git endpoint without .git	
+		$ bower install git+https://github.com/ahmed-badawy/TheShare
+	// Shortcut for github
+		$ bower install ahmed-badawy/TheShare
+	// Local files 
+		$ bower install C:\Users\courtaks\assets\main
+		$ bower install ../main/css
+	// remote servers (.zip & .tar will be decompressed)
+		$ bower install http://ahmed-badawy.com/MyCurrentCourses/assets/style.css
+		$ bower install http://ahmed-badawy.com/MyCurrentCourses/assets/assets.zip
+
+
+-F, --force-latest: Force latest version on conflict
+-p, --production: Do not install project devDependencies
+-S, --save: Save installed packages into the project’s bower.json dependencies
+-D, --save-dev: Save installed packages into the project’s bower.json devDependencies
+-E, --save-exact: Configure installed packages with an exact version rather than semver
+
+
+
+
+
+$ bower uninstall jquery : to uninstall
+$ bower prune
+
+$ bower list 				: shows you what's the current bower list
+$ bower list --paths 		: shows you all the paths of your packages
+
+$ bower init : init bower.json file
+
+
+//if you already have a bower file you can use the 
+	$ bower install    : installs the existing bower file packages
+
+
+$ bower cache clean : clean all the cache
+$ bower cache list : list all cache contents
+
+
+

@@ -1,0 +1,11 @@
+{
+  "name": "TheShare",
+  "_cacheHeaders": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index",
+  "_source": "https://github.com/Ahmed-Badawy/TheShare",
+  "_target": "*",
+  "_originalSource": "https://github.com/Ahmed-Badawy/TheShare",
+  "_direct": true
+}

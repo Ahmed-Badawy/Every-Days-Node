@@ -1,0 +1,23 @@
+{
+  "name": "bower",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ahmed-Badawy <me@ahmed-badawy.com> (http://ahmed-badawy.com/)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Ahmed-Badawy/Every-Days-Node",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "TheShare": "https://github.com/Ahmed-Badawy/TheShare"
+  }
+}

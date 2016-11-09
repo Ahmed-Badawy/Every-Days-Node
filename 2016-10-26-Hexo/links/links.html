@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		font-family: tahoma
+	}
+	</style>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script type="text/javascript" src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script type="text/javascript" src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+  <script type="text/javascript" src='bower_components/angular/angular.min.js'></script>
+
+</head>
+<body class='container' ng-controller='main'>
+
+<div ng-repeat='(k,v) in links'>
+  <h1>helo</h1>
+</div>
+
+<h1>hexo blog links</h1>
+<a target='_blank' class='btn btn-default' href="http://localhost:4000/pages/me.html">Me</a>
+<a target='_blank' class='btn btn-default' href="http://localhost:4000/pages/ideas.html">ideas</a>
+<a target='_blank' class='btn btn-default' href="http://localhost:4000/pages/node-ideas.html">node-ideas</a>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+<script>
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA53mE5XZpkuOVUYN0Y24kJchz5-iyHKRo",
+    authDomain: "new-firebase-project-74883.firebaseapp.com",
+    databaseURL: "https://new-firebase-project-74883.firebaseio.com",
+    storageBucket: "new-firebase-project-74883.appspot.com",
+    messagingSenderId: "386280123523"
+  };
+  firebase.initializeApp(config);
+
+  let database = firebase.database();
+
+  var links_ref = database.ref('/links');
+
+function read_data(){
+  return links_ref.once('value', snapshot=>{
+    // console.log( "once : ",snapshot.val() );
+    // snapshot.forEach(item=>{
+    //   console.log(item.val())
+    // })
+    return snapshot.val();
+
+  },err=>console.log(err));  
+}
+
+var myApp = angular.module('myApp',[]);
+myApp.controller('main',function($scope){
+
+  let links = [];
+  $scope.links = [];
+
+  $scope.setLinks = function(){
+    $scope.links = ['one','two'];
+  }
+
+  $output = read_data();
+  $output.then(snap=>{
+    // snap.forEach(item=>{
+    //   if(!links[item.key]) links[item.key] = [];
+    //   item.forEach(item2=>{
+    //     links[item.key].push({ name:item2.key, url:item2.val() });
+    //   })
+    // })
+    // $scope.links = links;
+    $scope.setLinks(['one','two']);
+    console.log($scope.links);
+  })
+
+});
+
+</script>
+</body>
+</html>
