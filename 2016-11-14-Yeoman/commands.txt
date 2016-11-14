@@ -1,0 +1,66 @@
+
+$ npm init
+$ npm install -g yo
+
+//now you can install generators to use them, EX:-
+	$ npm install -g generator-webapp generator-common
+
+//you can find more generators here: http://yeoman.io/generators/
+
+//now to use this generator
+	$ yo : then choose the wanted generator from the list 
+	//or just $ yo <generator name>
+//when you are prompt with choices you will move with the up/down arrow & space to select & deselect.
+//many generators come with gulp/grunt that can build & run servers on them using: 
+			$ gulp serve 
+			$ grunt serve
+
+
+$ yeoman webapp --babel   : use the generator & create a web application & include babel
+
+
+
+//------------------------------------
+
+$ npm init  	: init the yeoman-generator package
+//make sure that the init name is like : generator-<word> so you can call it with $ yo word
+
+$ npm install yeoman-generator --save
+$ npm install generator-common --save
+//then add the (app/index.js) file
+$ npm link 		: link the current directory to the npm directory so you can install it using yeoman (inside /app directory)
+$ yo <word> : to run the generator
+
+//---------
+after creating sub generator you can run it with: 
+$ yo <generator-name>:<sub-generator-name> <prams-&-options>
+EX: $ yo one:subg sub-name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -44,7 +44,7 @@ console.log("static methods"," : ",function(){
 	class C {
 	  static method(num=3) { return num; }
 	}
-	return typeof C.method === "function" && C.method(3) === 3;
+	return typeof C.method === "function" && C.method(4) === 4;
 }());
 
 
